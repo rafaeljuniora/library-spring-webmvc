@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Usuários</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+<div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold text-blue-600 mb-8">Gerenciamento de Usuários</h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Card Listar Usuários -->
+        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+            <h2 class="text-xl font-semibold text-blue-600 mb-4">Listar Usuários</h2>
+            <p class="text-gray-600 mb-4">Visualize, edite ou remova usuários cadastrados no sistema.</p>
+            <a href="/usuarios/listar" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
+                Acessar Lista
+            </a>
+        </div>
+
+        <!-- Card Adicionar Usuário -->
+        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+            <h2 class="text-xl font-semibold text-blue-600 mb-4">Adicionar Novo Usuário</h2>
+            <p class="text-gray-600 mb-4">Cadastre um novo usuário no sistema.</p>
+            <a href="/usuarios/novo" class="inline-block bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600">
+                Novo Usuário
+            </a>
+        </div>
+    </div>
+
+    <div class="mt-8">
+        <a href="/" class="text-blue-500 hover:underline">← Voltar para a página inicial</a>
+    </div>
+</div>
+</body>
+</html>
