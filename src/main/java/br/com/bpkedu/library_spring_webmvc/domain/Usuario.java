@@ -21,6 +21,9 @@ public class Usuario {
         this.nome = nome;
         this.senha = senha;
     }
+    private String email;
+    private String endereco;
+    private String telefone;
 
     public Long getId() {
         return id;
@@ -44,5 +47,27 @@ public class Usuario {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    public String getEmail() {
+        return email;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    @Override
+    public String toString() {
+        return "Usuario{" +
+            "id=" + id +
+            ", nome='" + nome + '\'' +
+            ", senha='" + senha + '\'' +
+            ", email='" + email + '\'' +
+            ", endereco='" + endereco + '\'' +
+            ", telefone='" + telefone + '\'' +
+            '}';
     }
 }

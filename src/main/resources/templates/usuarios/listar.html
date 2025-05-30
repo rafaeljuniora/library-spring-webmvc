@@ -3,48 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listar Usuários</title>
+    <title>Listar Livros</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-100">
 <div class="container mx-auto px-4 py-8">
-    <h1 class="text-3xl font-bold text-blue-500 mb-8 text-center">Usuários</h1>
-
-    <div class="overflow-x-auto">
-        <table class="w-full bg-white shadow-md rounded-lg overflow-hidden">
-            <thead class="bg-blue-500 text-white">
-            <tr>
-                <th class="py-3 px-6 text-left">Nome</th>
-                <th class="py-3 px-6 text-left">Senha</th>
-                <th class="py-3 px-6 text-center">Ações</th>
-            </tr>
-            </thead>
-            <tbody class="divide-y divide-gray-200">
-            <tr th:each="usuario : ${usuarios}" class="hover:bg-gray-50 transition-colors">
-                <td class="py-4 px-6" th:text="${usuario.nome}"></td>
-                <td class="py-4 px-6" th:text="${usuario.senha}"></td>
-                <td class="py-4 px-6 text-center">
-                    <div class="flex justify-center space-x-2">
-                        <a th:href="@{/usuarios/editar/{id}(id=${usuario.id})}"
-                           class="text-blue-500 hover:text-blue-700 hover:underline">Editar</a>
-                        <span class="text-gray-400">|</span>
-                        <a th:href="@{/usuarios/deletar/{id}(id=${usuario.id})}"
-                           class="text-red-500 hover:text-red-700 hover:underline">Deletar</a>
-                        <span class="text-gray-400">|</span>
-                        <a th:href="@{/usuarios/{id}(id=${usuario.id})}"
-                           class="text-green-500 hover:text-green-700 hover:underline">Detalhes</a>
-                    </div>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="mt-6 text-center">
-        <a href="./novo" class="inline-block bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg shadow-md transition-colors">
-            Adicionar Usuário
-        </a>
-    </div>
+    <h1 class="text-3xl font-bold text-green-600 mb-8">Livros</h1>
+    <table class="w-full bg-white shadow-md rounded-lg">
+        <thead>
+        <tr>
+            <th class="py-2 px-4 bg-green-500 text-white">Título</th>
+            <th class="py-2 px-4 bg-green-500 text-white">Autor</th>
+            <th class="py-2 px-4 bg-green-500 text-white">Ano de Publicação</th>
+            <th class="py-2 px-4 bg-green-500 text-white">Ações</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="livro : ${livros}">
+            <td class="py-2 px-4 border-b" th:text="${livro.titulo}"></td>
+            <td class="py-2 px-4 border-b" th:text="${livro.autor}"></td>
+            <td class="py-2 px-4 border-b" th:text="${livro.anoPublicacao}"></td>
+            <td class="py-2 px-4 border-b">
+                <a th:href="@{/livros/editar/{id}(id=${livro.id})}" class="text-blue-500 hover:underline">Editar</a>
+                <a th:href="@{/livros/deletar/{id}(id=${livro.id})}" class="text-red-500 hover:underline ml-2">Deletar</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <a href="./novo" class="mt-4 inline-block bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600">Adicionar Livro</a>
 </div>
 </body>
 </html>
